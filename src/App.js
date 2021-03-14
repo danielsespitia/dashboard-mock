@@ -14,8 +14,7 @@ import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOut
 import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 
-export const logo =
-  'https://lh3.googleusercontent.com/proxy/PEqQnSUdEEvMGTjmKTPxIn_xJv4wWt8O1DVlEOCy4AGTM6XD1_F7OqdjLCZGZZURjAGjuwFACDSgXGSCR7jKyidf3HMH2V5FxMnEs1fNAwKdA0DZR2furajhXOHIcs8qN4pGDh6WN0SwKME1yLXccYlQLpKxiS0';
+import mainLogo from './assets/logo.png';
 
 export const DropdownButton = styled.button`
   display: inherit;
@@ -67,23 +66,24 @@ export const SidebarButtonContainer = styled.div`
   height: 81.4%;
 `;
 
-export const SidebarButton = styled.button`
+export const SidebarButton = styled.a`
   background-color: white;
   text-align: left;
   display: flex;
   align-items: center;
   height: 43px;
-  width: 100%;
+  width: 98%;
   font-size: 1rem;
   border: none;
   border-right: 5px solid white;
-  padding-left: 30px;
+
   margin-bottom: 15px;
   cursor: pointer;
-  &:active {
+  &:focus {
     background-color: #def5ff;
     border-right: 5px solid #09aff6;
     color: #0daff5;
+    font-weight: bold;
   }
   &:hover {
     background-color: #def5ff;
@@ -113,6 +113,10 @@ export const Logo = styled.img`
 
 export const SidebarUserContainer = styled.div`
   display: inherit;
+  padding-left: 6px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
   align-self: center;
   flex-direction: row;
   justify-self: flex-end;
@@ -138,7 +142,8 @@ export const UserInfoContainer = styled.div`
 `;
 
 export const P = styled.p`
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 `;
@@ -164,7 +169,7 @@ export const SearchBar = styled.input`
   border: none;
   border-radius: 8px;
   width: 29.3vw;
-  box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
   outline: none;
 `;
 
@@ -207,8 +212,11 @@ export const Badge = styled.span`
 
 export const H1 = styled.h1`
   padding: 0;
+  margin: 0;
   margin-top: 19px;
+  margin-bottom: 22px;
   font-size: 32px;
+  font-weight: 900;
 `;
 
 export const DashboardContainer = styled.div`
@@ -253,6 +261,7 @@ export const HalfCardContainer = styled.div`
 
 export const HalfCard = styled.div`
   display: inherit;
+  flex-direction: column;
   border-radius: 7px;
   height: 100%;
   width: 48.9%;
@@ -260,13 +269,152 @@ export const HalfCard = styled.div`
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
+export const CardInfoContainer = styled.div`
+  display: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 92%;
+  margin-left: 17px;
+  margin-top: 15px;
+`;
+
+export const CardInfoContainerAlt = styled(CardInfoContainer)`
+  margin-top: 18px;
+`;
+
+export const CardTitleContainer = styled.div`
+  display: inherit;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const DropdownContainer = styled.div`
+  display: inherit;
+  align-items: center;
+`;
+
+export const StatsContainer = styled.div`
+  display: inherit;
+  margin-top: 35px;
+  width: 100%;
+  flex-direction: column;
+`;
+
+export const StatContainer = styled.div`
+  display: inherit;
+  flex-direction: column;
+  margin-bottom: 29px;
+`;
+
+export const StatTextContainer = styled.div`
+  display: inherit;
+  justify-content: space-between;
+`;
+
+const messagesSent = '100%';
+const messagesLeft = '75%';
+const replyRates = '50%';
+const emailsSent = '100%';
+const openRate = '75%';
+const clickedRate = '50%';
+
+export const ProgressBarOutline = styled.div`
+  height: 14px;
+  width: 100%;
+  background-color: #f3f1f1;
+  margin-top: 19px;
+  border: none;
+  border-radius: 20px;
+`;
+
+export const ProgressBarLeftBlue = styled.div`
+  height: 100%;
+  width: ${messagesSent};
+  background-color: #0fb1f6;
+  border: none;
+  border-radius: 20px;
+`;
+
+export const ProgressBarLeftOrange = styled(ProgressBarLeftBlue)`
+  width: ${messagesLeft};
+  background-color: #ffb800;
+`;
+
+export const ProgressBarLeftGreen = styled(ProgressBarLeftBlue)`
+  width: ${replyRates};
+  background-color: #1dd250;
+`;
+
+export const ProgressBarRightBlue = styled(ProgressBarLeftBlue)`
+  width: ${emailsSent};
+`;
+
+export const ProgressBarRightOrange = styled(ProgressBarLeftOrange)`
+  width: ${openRate};
+`;
+
+export const ProgressBarRightGreen = styled(ProgressBarLeftGreen)`
+  width: ${clickedRate};
+`;
+
 export const HalfCardAltered = styled.div`
   display: inherit;
+  align-items: flex-start;
+  flex-direction: column;
   background-color: white;
   height: 43.8%;
   width: 95.9%;
   border-radius: 7px;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
+`;
+
+export const ReferralStatsContainer = styled.div`
+  display: inherit;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const ReferralStatContainer = styled.div`
+  display: inherit;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 6px;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #efefef;
+`;
+
+export const ReferralStatValueBlue = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  color: #0fb1f6;
+  font-weight: 600;
+`;
+
+export const ReferralStatValueGreen = styled(ReferralStatValueBlue)`
+  color: #1dd250;
+`;
+
+export const ReferralLinkContainer = styled.div`
+  display: inherit;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 14px;
+  width: 100%;
+  height: 85px;
+`;
+
+export const ReferralLink = styled.input`
+  height: 42px;
+  width: 100%;
+  background-color: #f3f1f1;
+  border: none;
+  border-radius: 10px;
+  outline: none;
 `;
 
 export const HalfCardStretched = styled.div`
@@ -278,7 +426,7 @@ export const HalfCardStretched = styled.div`
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
-export const marginButton = { marginRight: '6px' };
+export const marginButton = { marginLeft: '30px', marginRight: '6px' };
 
 export const thumbnail =
   'https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg';
@@ -291,7 +439,7 @@ function App() {
           <Sidebar className="sidebar">
             <SidebarHeader>
               <LogoContainer>
-                <Logo src={logo} />
+                <Logo src={mainLogo} />
               </LogoContainer>
             </SidebarHeader>
             <SidebarButtonContainer>
@@ -344,7 +492,7 @@ function App() {
                 <AddCircleOutlineOutlinedIcon />
               </BlueButton>
               <BlueButton style={{ paddingLeft: '15px', paddingRight: '15px' }}>
-                <InsertDriveFileOutlinedIcon style={marginButton} />
+                <InsertDriveFileOutlinedIcon style={{ marginRight: '6px' }} />
                 Import Contacts
               </BlueButton>
               <WhiteButton
@@ -378,9 +526,23 @@ function App() {
                         'Nov',
                         'Dic',
                       ],
-                      y: [0, 199, 150, 280, 230, 220, 270, 150, 170, 280, 220, 110, 150],
-                      marker: {color: '#1dd250'},
-                      name: 'Customers'
+                      y: [
+                        0,
+                        199,
+                        150,
+                        280,
+                        230,
+                        220,
+                        270,
+                        150,
+                        170,
+                        280,
+                        220,
+                        110,
+                        150,
+                      ],
+                      marker: { color: '#1dd250' },
+                      name: 'Customers',
                     },
                     {
                       type: 'scatter',
@@ -399,22 +561,161 @@ function App() {
                         'Nov',
                         'Dic',
                       ],
-                      y: [0, 120, 220, 150, 140, 290, 185, 205, 105, 120, 300, 80, 210],
-                      marker: {color: '#ff8900'},
-                      name: 'Prospects'
+                      y: [
+                        0,
+                        120,
+                        220,
+                        150,
+                        140,
+                        290,
+                        185,
+                        205,
+                        105,
+                        120,
+                        402,
+                        80,
+                        210,
+                      ],
+                      marker: { color: '#ff8900' },
+                      name: 'Prospects',
                     },
                   ]}
-                  layout={{ width: 920, height: 390, opacity: 0.7, title: 'Customer report'}}
+                  layout={{
+                    borderRadius: 50,
+                    width: 900,
+                    height: 380,
+                    opacity: 0.7,
+                    title: 'Customer report',
+                  }}
                 />
               </FullCard>
               <HalfCardContainer>
-                <HalfCard></HalfCard>
-                <HalfCard></HalfCard>
+                <HalfCard>
+                  <CardInfoContainer>
+                    <CardTitleContainer>
+                      <P>
+                        <strong>SMS Broadcast Analytics</strong>
+                      </P>
+                      <DropdownContainer>
+                        <P>Last week</P>
+                        <DropdownButton>
+                          <KeyboardArrowDownOutlinedIcon />
+                        </DropdownButton>
+                      </DropdownContainer>
+                    </CardTitleContainer>
+                    <StatsContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Total Messages Sent</P>
+                          <P>{messagesSent}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarLeftBlue />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Number of messages you left</P>
+                          <P>{messagesLeft}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarLeftOrange />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Reply rates</P>
+                          <P>{replyRates}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarLeftGreen />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                    </StatsContainer>
+                  </CardInfoContainer>
+                </HalfCard>
+                <HalfCard>
+                  <CardInfoContainer>
+                    <CardTitleContainer>
+                      <P>
+                        <strong>Email Broadcast Analytics</strong>
+                      </P>
+                      <DropdownContainer>
+                        <P>Last week</P>
+                        <DropdownButton>
+                          <KeyboardArrowDownOutlinedIcon />
+                        </DropdownButton>
+                      </DropdownContainer>
+                    </CardTitleContainer>
+                    <StatsContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Total Emails Sent</P>
+                          <P>{emailsSent}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarRightBlue />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Open Rate</P>
+                          <P>{openRate}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarRightOrange />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                      <StatContainer>
+                        <StatTextContainer>
+                          <P>Clicked Rate</P>
+                          <P>{clickedRate}</P>
+                        </StatTextContainer>
+                        <ProgressBarOutline>
+                          <ProgressBarRightGreen />
+                        </ProgressBarOutline>
+                      </StatContainer>
+                    </StatsContainer>
+                  </CardInfoContainer>
+                </HalfCard>
               </HalfCardContainer>
             </MainLeftContainer>
             <MainRightContainer>
-              <HalfCardAltered></HalfCardAltered>
-              <HalfCardStretched></HalfCardStretched>
+              <HalfCardAltered>
+                <CardInfoContainerAlt>
+                  <P>
+                    <strong>Referrals</strong>
+                  </P>
+                  <ReferralStatsContainer>
+                    <ReferralStatContainer>
+                      <ReferralStatValueBlue>236</ReferralStatValueBlue>
+                      <P>Active customers</P>
+                    </ReferralStatContainer>
+                    <ReferralStatContainer>
+                      <ReferralStatValueGreen>$5608</ReferralStatValueGreen>
+                      <P>Upcoming Payout $</P>
+                    </ReferralStatContainer>
+                    <ReferralLinkContainer>
+                      <P>
+                        <strong>
+                          Share this referral link to your friends & followers
+                        </strong>
+                      </P>
+                      <ReferralLink
+                        type="input"
+                        placeholder="https://app.teametrix.com?fpr=james52"
+                      />
+                    </ReferralLinkContainer>
+                  </ReferralStatsContainer>
+                </CardInfoContainerAlt>
+              </HalfCardAltered>
+              <HalfCardStretched>
+                <CardInfoContainer>
+                  <P>
+                    <strong>Contacts</strong>
+                  </P>
+                </CardInfoContainer>
+              </HalfCardStretched>
             </MainRightContainer>
           </DashboardContainer>
         </Main>
