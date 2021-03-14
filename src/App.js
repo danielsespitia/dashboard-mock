@@ -1,4 +1,5 @@
 import './App.css';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Plot from 'react-plotly.js';
 
@@ -60,13 +61,13 @@ export const SidebarHeader = styled.header`
   height: 9%;
 `;
 
-export const SidebarButtonContainer = styled.div`
+export const SidebarAnchorContainer = styled.nav`
   display: inherit;
   flex-direction: column;
   height: 81.4%;
 `;
 
-export const SidebarButton = styled.a`
+export const SidebarNavAnchor = styled.Link`
   background-color: white;
   text-align: left;
   display: flex;
@@ -76,7 +77,6 @@ export const SidebarButton = styled.a`
   font-size: 1rem;
   border: none;
   border-right: 5px solid white;
-
   margin-bottom: 15px;
   cursor: pointer;
   &:focus {
@@ -215,7 +215,7 @@ export const H1 = styled.h1`
   margin: 0;
   margin-top: 19px;
   margin-bottom: 22px;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 900;
 `;
 
@@ -244,6 +244,7 @@ export const MainRightContainer = styled.div`
 
 export const FullCard = styled.div`
   display: inherit;
+  justify-content: center;
   border-radius: 7px;
   background-color: white;
   height: 50.8%;
@@ -418,12 +419,30 @@ export const ReferralLink = styled.input`
 `;
 
 export const HalfCardStretched = styled.div`
+  display: inherit;
   background-color: white;
   margin-top: 20px;
   height: 53.3%;
   width: 95.9%;
   border-radius: 7px;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
+`;
+
+export const ContactsStatsContainer = styled.div`
+  display: inherit;
+  flex-direction: column;
+`;
+
+export const ContactsStatContainer = styled.div`
+  display: inherit;
+`;
+
+export const ContactIcon = styled.img``;
+
+export const ContactsTextContainer = styled.div`
+  display: inherit;
+  align-items: flex-start;
+  flex-direction: column;
 `;
 
 export const marginButton = { marginLeft: '30px', marginRight: '6px' };
@@ -442,32 +461,32 @@ function App() {
                 <Logo src={mainLogo} />
               </LogoContainer>
             </SidebarHeader>
-            <SidebarButtonContainer>
-              <SidebarButton className="sidebar-button">
+            <SidebarAnchorContainer>
+              <SidebarNavAnchor className="sidebar-button">
                 <DashboardIcon style={marginButton} />
                 Dashboard
-              </SidebarButton>
-              <SidebarButton>
+              </SidebarNavAnchor>
+              <SidebarNavAnchor>
                 <ContactsIcon style={marginButton} />
                 Contacts
-              </SidebarButton>
-              <SidebarButton>
+              </SidebarNavAnchor>
+              <SidebarNavAnchor>
                 <InboxIcon style={marginButton} />
                 Inbox
-              </SidebarButton>
-              <SidebarButton>
+              </SidebarNavAnchor>
+              <SidebarNavAnchor>
                 <SettingsInputAntennaIcon style={marginButton} />
                 Broadcast
-              </SidebarButton>
-              <SidebarButton>
+              </SidebarNavAnchor>
+              <SidebarNavAnchor>
                 <ListIcon style={marginButton} />
                 Lists
-              </SidebarButton>
-              <SidebarButton>
+              </SidebarNavAnchor>
+              <SidebarNavAnchor>
                 <LocalAtmIcon style={marginButton} />
                 Referrals
-              </SidebarButton>
-            </SidebarButtonContainer>
+              </SidebarNavAnchor>
+            </SidebarAnchorContainer>
             <SidebarUserContainer>
               <ThumbnailContainer>
                 <Thumbnail src={thumbnail} />
@@ -581,7 +600,7 @@ function App() {
                     },
                   ]}
                   layout={{
-                    borderRadius: 50,
+                    autosize: true,
                     width: 900,
                     height: 380,
                     opacity: 0.7,
@@ -714,6 +733,43 @@ function App() {
                   <P>
                     <strong>Contacts</strong>
                   </P>
+                  <ContactsStatsContainer>
+                    <ContactsStatContainer>
+                      <ContactIcon></ContactIcon>
+                      <ContactsTextContainer>
+                        <P>425</P>
+                        <P>Contacts</P>
+                      </ContactsTextContainer>
+                    </ContactsStatContainer>
+                    <ContactsStatContainer>
+                      <ContactIcon></ContactIcon>
+                      <ContactsTextContainer>
+                        <P>425</P>
+                        <P>Contacts</P>
+                      </ContactsTextContainer>
+                    </ContactsStatContainer>
+                    <ContactsStatContainer>
+                      <ContactIcon></ContactIcon>
+                      <ContactsTextContainer>
+                        <P>425</P>
+                        <P>Contacts</P>
+                      </ContactsTextContainer>
+                    </ContactsStatContainer>
+                    <ContactsStatContainer>
+                      <ContactIcon></ContactIcon>
+                      <ContactsTextContainer>
+                        <P>425</P>
+                        <P>Contacts</P>
+                      </ContactsTextContainer>
+                    </ContactsStatContainer>
+                    <ContactsStatContainer>
+                      <ContactIcon></ContactIcon>
+                      <ContactsTextContainer>
+                        <P>425</P>
+                        <P>Contacts</P>
+                      </ContactsTextContainer>
+                    </ContactsStatContainer>
+                  </ContactsStatsContainer>
                 </CardInfoContainer>
               </HalfCardStretched>
             </MainRightContainer>
