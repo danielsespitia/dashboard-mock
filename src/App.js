@@ -1,5 +1,5 @@
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import Plot from 'react-plotly.js';
 
@@ -67,10 +67,12 @@ export const SidebarAnchorContainer = styled.nav`
   height: 81.4%;
 `;
 
-export const SidebarNavAnchor = styled.Link`
+export const SidebarNavAnchor = styled(Link)`
+  text-decoration: none;
   background-color: white;
   text-align: left;
-  display: flex;
+  display: inherit;
+  color: black;
   align-items: center;
   height: 43px;
   width: 98%;
@@ -454,327 +456,333 @@ function App() {
   return (
     <div style={{ backgroundColor: '#000' }}>
       <AppContainer className="App">
-        <Aside className="aside">
-          <Sidebar className="sidebar">
-            <SidebarHeader>
-              <LogoContainer>
-                <Logo src={mainLogo} />
-              </LogoContainer>
-            </SidebarHeader>
-            <SidebarAnchorContainer>
-              <SidebarNavAnchor className="sidebar-button">
-                <DashboardIcon style={marginButton} />
-                Dashboard
-              </SidebarNavAnchor>
-              <SidebarNavAnchor>
-                <ContactsIcon style={marginButton} />
-                Contacts
-              </SidebarNavAnchor>
-              <SidebarNavAnchor>
-                <InboxIcon style={marginButton} />
-                Inbox
-              </SidebarNavAnchor>
-              <SidebarNavAnchor>
-                <SettingsInputAntennaIcon style={marginButton} />
-                Broadcast
-              </SidebarNavAnchor>
-              <SidebarNavAnchor>
-                <ListIcon style={marginButton} />
-                Lists
-              </SidebarNavAnchor>
-              <SidebarNavAnchor>
-                <LocalAtmIcon style={marginButton} />
-                Referrals
-              </SidebarNavAnchor>
-            </SidebarAnchorContainer>
-            <SidebarUserContainer>
-              <ThumbnailContainer>
-                <Thumbnail src={thumbnail} />
-              </ThumbnailContainer>
-              <UserInfoContainer>
-                <P>
-                  <strong>Jacob Jones</strong>
-                </P>
-                <P>Company Name</P>
-              </UserInfoContainer>
-              <DropdownButton>
-                <KeyboardArrowDownOutlinedIcon />
-              </DropdownButton>
-            </SidebarUserContainer>
-          </Sidebar>
-        </Aside>
-        <Main>
-          <Header className="header">
-            <SearchBar type="search" placeholder="Search" />
-            <HeaderButtonContainer>
-              <BlueButton style={{ paddingLeft: '10px', paddingRight: '10px' }}>
-                <AddCircleOutlineOutlinedIcon />
-              </BlueButton>
-              <BlueButton style={{ paddingLeft: '15px', paddingRight: '15px' }}>
-                <InsertDriveFileOutlinedIcon style={{ marginRight: '6px' }} />
-                Import Contacts
-              </BlueButton>
-              <WhiteButton
-                style={{ paddingLeft: '11px', paddingRight: '11px' }}
-              >
-                <NotificationsNoneIcon />
-                <Badge />
-              </WhiteButton>
-            </HeaderButtonContainer>
-          </Header>
-          <H1>Dashboard</H1>
-          <DashboardContainer>
-            <MainLeftContainer>
-              <FullCard>
-                <Plot
-                  data={[
-                    {
-                      type: 'scatter',
-                      x: [
-                        '',
-                        'Jan',
-                        'Feb',
-                        'Mar',
-                        'Abr',
-                        'May',
-                        'Jun',
-                        'Jul',
-                        'Ago',
-                        'Sep',
-                        'Oct',
-                        'Nov',
-                        'Dic',
-                      ],
-                      y: [
-                        0,
-                        199,
-                        150,
-                        280,
-                        230,
-                        220,
-                        270,
-                        150,
-                        170,
-                        280,
-                        220,
-                        110,
-                        150,
-                      ],
-                      marker: { color: '#1dd250' },
-                      name: 'Customers',
-                    },
-                    {
-                      type: 'scatter',
-                      x: [
-                        '',
-                        'Jan',
-                        'Feb',
-                        'Mar',
-                        'Abr',
-                        'May',
-                        'Jun',
-                        'Jul',
-                        'Ago',
-                        'Sep',
-                        'Oct',
-                        'Nov',
-                        'Dic',
-                      ],
-                      y: [
-                        0,
-                        120,
-                        220,
-                        150,
-                        140,
-                        290,
-                        185,
-                        205,
-                        105,
-                        120,
-                        402,
-                        80,
-                        210,
-                      ],
-                      marker: { color: '#ff8900' },
-                      name: 'Prospects',
-                    },
-                  ]}
-                  layout={{
-                    autosize: true,
-                    width: 900,
-                    height: 380,
-                    opacity: 0.7,
-                    title: 'Customer report',
-                  }}
-                />
-              </FullCard>
-              <HalfCardContainer>
-                <HalfCard>
-                  <CardInfoContainer>
-                    <CardTitleContainer>
-                      <P>
-                        <strong>SMS Broadcast Analytics</strong>
-                      </P>
-                      <DropdownContainer>
-                        <P>Last week</P>
-                        <DropdownButton>
-                          <KeyboardArrowDownOutlinedIcon />
-                        </DropdownButton>
-                      </DropdownContainer>
-                    </CardTitleContainer>
-                    <StatsContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Total Messages Sent</P>
-                          <P>{messagesSent}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarLeftBlue />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Number of messages you left</P>
-                          <P>{messagesLeft}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarLeftOrange />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Reply rates</P>
-                          <P>{replyRates}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarLeftGreen />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                    </StatsContainer>
-                  </CardInfoContainer>
-                </HalfCard>
-                <HalfCard>
-                  <CardInfoContainer>
-                    <CardTitleContainer>
-                      <P>
-                        <strong>Email Broadcast Analytics</strong>
-                      </P>
-                      <DropdownContainer>
-                        <P>Last week</P>
-                        <DropdownButton>
-                          <KeyboardArrowDownOutlinedIcon />
-                        </DropdownButton>
-                      </DropdownContainer>
-                    </CardTitleContainer>
-                    <StatsContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Total Emails Sent</P>
-                          <P>{emailsSent}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarRightBlue />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Open Rate</P>
-                          <P>{openRate}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarRightOrange />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                      <StatContainer>
-                        <StatTextContainer>
-                          <P>Clicked Rate</P>
-                          <P>{clickedRate}</P>
-                        </StatTextContainer>
-                        <ProgressBarOutline>
-                          <ProgressBarRightGreen />
-                        </ProgressBarOutline>
-                      </StatContainer>
-                    </StatsContainer>
-                  </CardInfoContainer>
-                </HalfCard>
-              </HalfCardContainer>
-            </MainLeftContainer>
-            <MainRightContainer>
-              <HalfCardAltered>
-                <CardInfoContainerAlt>
+        <Router>
+          <Aside className="aside">
+            <Sidebar className="sidebar">
+              <SidebarHeader>
+                <LogoContainer>
+                  <Logo src={mainLogo} />
+                </LogoContainer>
+              </SidebarHeader>
+              <SidebarAnchorContainer>
+                <SidebarNavAnchor exact to="/" className="sidebar-button">
+                  <DashboardIcon style={marginButton} />
+                  Dashboard
+                </SidebarNavAnchor>
+                <SidebarNavAnchor>
+                  <ContactsIcon style={marginButton} />
+                  Contacts
+                </SidebarNavAnchor>
+                <SidebarNavAnchor>
+                  <InboxIcon style={marginButton} />
+                  Inbox
+                </SidebarNavAnchor>
+                <SidebarNavAnchor>
+                  <SettingsInputAntennaIcon style={marginButton} />
+                  Broadcast
+                </SidebarNavAnchor>
+                <SidebarNavAnchor>
+                  <ListIcon style={marginButton} />
+                  Lists
+                </SidebarNavAnchor>
+                <SidebarNavAnchor>
+                  <LocalAtmIcon style={marginButton} />
+                  Referrals
+                </SidebarNavAnchor>
+              </SidebarAnchorContainer>
+              <SidebarUserContainer>
+                <ThumbnailContainer>
+                  <Thumbnail src={thumbnail} />
+                </ThumbnailContainer>
+                <UserInfoContainer>
                   <P>
-                    <strong>Referrals</strong>
+                    <strong>Jacob Jones</strong>
                   </P>
-                  <ReferralStatsContainer>
-                    <ReferralStatContainer>
-                      <ReferralStatValueBlue>236</ReferralStatValueBlue>
-                      <P>Active customers</P>
-                    </ReferralStatContainer>
-                    <ReferralStatContainer>
-                      <ReferralStatValueGreen>$5608</ReferralStatValueGreen>
-                      <P>Upcoming Payout $</P>
-                    </ReferralStatContainer>
-                    <ReferralLinkContainer>
-                      <P>
-                        <strong>
-                          Share this referral link to your friends & followers
-                        </strong>
-                      </P>
-                      <ReferralLink
-                        type="input"
-                        placeholder="https://app.teametrix.com?fpr=james52"
-                      />
-                    </ReferralLinkContainer>
-                  </ReferralStatsContainer>
-                </CardInfoContainerAlt>
-              </HalfCardAltered>
-              <HalfCardStretched>
-                <CardInfoContainer>
-                  <P>
-                    <strong>Contacts</strong>
-                  </P>
-                  <ContactsStatsContainer>
-                    <ContactsStatContainer>
-                      <ContactIcon></ContactIcon>
-                      <ContactsTextContainer>
-                        <P>425</P>
-                        <P>Contacts</P>
-                      </ContactsTextContainer>
-                    </ContactsStatContainer>
-                    <ContactsStatContainer>
-                      <ContactIcon></ContactIcon>
-                      <ContactsTextContainer>
-                        <P>425</P>
-                        <P>Contacts</P>
-                      </ContactsTextContainer>
-                    </ContactsStatContainer>
-                    <ContactsStatContainer>
-                      <ContactIcon></ContactIcon>
-                      <ContactsTextContainer>
-                        <P>425</P>
-                        <P>Contacts</P>
-                      </ContactsTextContainer>
-                    </ContactsStatContainer>
-                    <ContactsStatContainer>
-                      <ContactIcon></ContactIcon>
-                      <ContactsTextContainer>
-                        <P>425</P>
-                        <P>Contacts</P>
-                      </ContactsTextContainer>
-                    </ContactsStatContainer>
-                    <ContactsStatContainer>
-                      <ContactIcon></ContactIcon>
-                      <ContactsTextContainer>
-                        <P>425</P>
-                        <P>Contacts</P>
-                      </ContactsTextContainer>
-                    </ContactsStatContainer>
-                  </ContactsStatsContainer>
-                </CardInfoContainer>
-              </HalfCardStretched>
-            </MainRightContainer>
-          </DashboardContainer>
-        </Main>
+                  <P>Company Name</P>
+                </UserInfoContainer>
+                <DropdownButton>
+                  <KeyboardArrowDownOutlinedIcon />
+                </DropdownButton>
+              </SidebarUserContainer>
+            </Sidebar>
+          </Aside>
+          <Main>
+            <Header className="header">
+              <SearchBar type="search" placeholder="Search" />
+              <HeaderButtonContainer>
+                <BlueButton
+                  style={{ paddingLeft: '10px', paddingRight: '10px' }}
+                >
+                  <AddCircleOutlineOutlinedIcon />
+                </BlueButton>
+                <BlueButton
+                  style={{ paddingLeft: '15px', paddingRight: '15px' }}
+                >
+                  <InsertDriveFileOutlinedIcon style={{ marginRight: '6px' }} />
+                  Import Contacts
+                </BlueButton>
+                <WhiteButton
+                  style={{ paddingLeft: '11px', paddingRight: '11px' }}
+                >
+                  <NotificationsNoneIcon />
+                  <Badge />
+                </WhiteButton>
+              </HeaderButtonContainer>
+            </Header>
+            <H1>Dashboard</H1>
+            <DashboardContainer>
+              <MainLeftContainer>
+                <FullCard>
+                  <Plot
+                    data={[
+                      {
+                        type: 'scatter',
+                        x: [
+                          '',
+                          'Jan',
+                          'Feb',
+                          'Mar',
+                          'Abr',
+                          'May',
+                          'Jun',
+                          'Jul',
+                          'Ago',
+                          'Sep',
+                          'Oct',
+                          'Nov',
+                          'Dic',
+                        ],
+                        y: [
+                          0,
+                          199,
+                          150,
+                          280,
+                          230,
+                          220,
+                          270,
+                          150,
+                          170,
+                          280,
+                          220,
+                          110,
+                          150,
+                        ],
+                        marker: { color: '#1dd250' },
+                        name: 'Customers',
+                      },
+                      {
+                        type: 'scatter',
+                        x: [
+                          '',
+                          'Jan',
+                          'Feb',
+                          'Mar',
+                          'Abr',
+                          'May',
+                          'Jun',
+                          'Jul',
+                          'Ago',
+                          'Sep',
+                          'Oct',
+                          'Nov',
+                          'Dic',
+                        ],
+                        y: [
+                          0,
+                          120,
+                          220,
+                          150,
+                          140,
+                          290,
+                          185,
+                          205,
+                          105,
+                          120,
+                          402,
+                          80,
+                          210,
+                        ],
+                        marker: { color: '#ff8900' },
+                        name: 'Prospects',
+                      },
+                    ]}
+                    layout={{
+                      autosize: true,
+                      width: 900,
+                      height: 380,
+                      opacity: 0.7,
+                      title: 'Customer report',
+                    }}
+                  />
+                </FullCard>
+                <HalfCardContainer>
+                  <HalfCard>
+                    <CardInfoContainer>
+                      <CardTitleContainer>
+                        <P>
+                          <strong>SMS Broadcast Analytics</strong>
+                        </P>
+                        <DropdownContainer>
+                          <P>Last week</P>
+                          <DropdownButton>
+                            <KeyboardArrowDownOutlinedIcon />
+                          </DropdownButton>
+                        </DropdownContainer>
+                      </CardTitleContainer>
+                      <StatsContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Total Messages Sent</P>
+                            <P>{messagesSent}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarLeftBlue />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Number of messages you left</P>
+                            <P>{messagesLeft}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarLeftOrange />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Reply rates</P>
+                            <P>{replyRates}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarLeftGreen />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                      </StatsContainer>
+                    </CardInfoContainer>
+                  </HalfCard>
+                  <HalfCard>
+                    <CardInfoContainer>
+                      <CardTitleContainer>
+                        <P>
+                          <strong>Email Broadcast Analytics</strong>
+                        </P>
+                        <DropdownContainer>
+                          <P>Last week</P>
+                          <DropdownButton>
+                            <KeyboardArrowDownOutlinedIcon />
+                          </DropdownButton>
+                        </DropdownContainer>
+                      </CardTitleContainer>
+                      <StatsContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Total Emails Sent</P>
+                            <P>{emailsSent}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarRightBlue />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Open Rate</P>
+                            <P>{openRate}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarRightOrange />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                        <StatContainer>
+                          <StatTextContainer>
+                            <P>Clicked Rate</P>
+                            <P>{clickedRate}</P>
+                          </StatTextContainer>
+                          <ProgressBarOutline>
+                            <ProgressBarRightGreen />
+                          </ProgressBarOutline>
+                        </StatContainer>
+                      </StatsContainer>
+                    </CardInfoContainer>
+                  </HalfCard>
+                </HalfCardContainer>
+              </MainLeftContainer>
+              <MainRightContainer>
+                <HalfCardAltered>
+                  <CardInfoContainerAlt>
+                    <P>
+                      <strong>Referrals</strong>
+                    </P>
+                    <ReferralStatsContainer>
+                      <ReferralStatContainer>
+                        <ReferralStatValueBlue>236</ReferralStatValueBlue>
+                        <P>Active customers</P>
+                      </ReferralStatContainer>
+                      <ReferralStatContainer>
+                        <ReferralStatValueGreen>$5608</ReferralStatValueGreen>
+                        <P>Upcoming Payout $</P>
+                      </ReferralStatContainer>
+                      <ReferralLinkContainer>
+                        <P>
+                          <strong>
+                            Share this referral link to your friends & followers
+                          </strong>
+                        </P>
+                        <ReferralLink
+                          type="input"
+                          placeholder="https://app.teametrix.com?fpr=james52"
+                        />
+                      </ReferralLinkContainer>
+                    </ReferralStatsContainer>
+                  </CardInfoContainerAlt>
+                </HalfCardAltered>
+                <HalfCardStretched>
+                  <CardInfoContainer>
+                    <P>
+                      <strong>Contacts</strong>
+                    </P>
+                    <ContactsStatsContainer>
+                      <ContactsStatContainer>
+                        <ContactIcon></ContactIcon>
+                        <ContactsTextContainer>
+                          <P>425</P>
+                          <P>Contacts</P>
+                        </ContactsTextContainer>
+                      </ContactsStatContainer>
+                      <ContactsStatContainer>
+                        <ContactIcon></ContactIcon>
+                        <ContactsTextContainer>
+                          <P>425</P>
+                          <P>Contacts</P>
+                        </ContactsTextContainer>
+                      </ContactsStatContainer>
+                      <ContactsStatContainer>
+                        <ContactIcon></ContactIcon>
+                        <ContactsTextContainer>
+                          <P>425</P>
+                          <P>Contacts</P>
+                        </ContactsTextContainer>
+                      </ContactsStatContainer>
+                      <ContactsStatContainer>
+                        <ContactIcon></ContactIcon>
+                        <ContactsTextContainer>
+                          <P>425</P>
+                          <P>Contacts</P>
+                        </ContactsTextContainer>
+                      </ContactsStatContainer>
+                      <ContactsStatContainer>
+                        <ContactIcon></ContactIcon>
+                        <ContactsTextContainer>
+                          <P>425</P>
+                          <P>Contacts</P>
+                        </ContactsTextContainer>
+                      </ContactsStatContainer>
+                    </ContactsStatsContainer>
+                  </CardInfoContainer>
+                </HalfCardStretched>
+              </MainRightContainer>
+            </DashboardContainer>
+          </Main>
+        </Router>
       </AppContainer>
     </div>
   );
