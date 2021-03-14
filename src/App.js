@@ -68,10 +68,17 @@ export const H1 = styled.h1`
   font-size: 32px;
 `;
 
-export const MainLeftContainer = styled.div`
+export const DashboardContainer = styled.div`
   display: inherit;
   margin-top: 4px;
-  height: 80%;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+`;
+
+export const MainLeftContainer = styled.div`
+  display: inherit;
+  height: 98%;
   width: 64.8%;
   flex-direction: column;
 `;
@@ -79,6 +86,9 @@ export const MainLeftContainer = styled.div`
 export const MainRightContainer = styled.div`
   display: inherit;
   flex-direction: column;
+  margin-left: 20px;
+  height: 98%;
+  width: 33%;
 `;
 
 export const FullCard = styled.div`
@@ -86,7 +96,7 @@ export const FullCard = styled.div`
   margin-top: 1px;
   border-radius: 7px;
   background-color: white;
-  height: 51.1%;
+  height: 50.8%;
   width: 100%;
 `;
 
@@ -102,8 +112,24 @@ export const HalfCard = styled.div`
   display: inherit;
   border-radius: 7px;
   height: 100%;
-  width: 48.8%;
+  width: 48.9%;
   background-color: white;
+`;
+
+export const HalfCardAltered = styled.div`
+  display: inherit;
+  background-color: white;
+  height: 43.8%;
+  width: 95.9%;
+  border-radius: 7px;
+`;
+
+export const HalfCardStretched = styled.div`
+  background-color: white;
+  margin-top: 20px;
+  height: 53%;
+  width: 95.9%;
+  border-radius: 7px;
 `;
 
 function App() {
@@ -123,14 +149,20 @@ function App() {
             </HeaderButtonContainer>
           </Header>
           <H1>Dashboard</H1>
-          <MainLeftContainer>
-            <FullCard></FullCard>
-            <HalfCardContainer>
-              <HalfCard></HalfCard>
-              <HalfCard></HalfCard>
-            </HalfCardContainer>
-          </MainLeftContainer>
-          <MainRightContainer></MainRightContainer>
+          <DashboardContainer>
+            <MainLeftContainer>
+              <FullCard></FullCard>
+              <HalfCardContainer>
+                <HalfCard></HalfCard>
+                <HalfCard></HalfCard>
+              </HalfCardContainer>
+            </MainLeftContainer>
+            <MainRightContainer>
+              <HalfCardAltered></HalfCardAltered>
+              <HalfCardStretched>
+              </HalfCardStretched>
+            </MainRightContainer>
+          </DashboardContainer>
         </Main>
       </AppContainer>
     </div>
