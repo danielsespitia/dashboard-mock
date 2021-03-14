@@ -1,13 +1,31 @@
 import './App.css';
 import styled from 'styled-components';
+import Plot from 'react-plotly.js';
 
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ContactsIcon from '@material-ui/icons/Contacts';
 import InboxIcon from '@material-ui/icons/Inbox';
+import SettingsInputAntennaIcon from '@material-ui/icons/SettingsInputAntenna';
+import ListIcon from '@material-ui/icons/List';
+import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
+import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
+import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 
 export const logo =
   'https://lh3.googleusercontent.com/proxy/PEqQnSUdEEvMGTjmKTPxIn_xJv4wWt8O1DVlEOCy4AGTM6XD1_F7OqdjLCZGZZURjAGjuwFACDSgXGSCR7jKyidf3HMH2V5FxMnEs1fNAwKdA0DZR2furajhXOHIcs8qN4pGDh6WN0SwKME1yLXccYlQLpKxiS0';
+
+export const DropdownButton = styled.button`
+  display: inherit;
+  justify-content: center;
+  background: none;
+  height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+`;
 
 export const AppContainer = styled.div`
   display: flex;
@@ -65,10 +83,12 @@ export const SidebarButton = styled.button`
   &:active {
     background-color: #def5ff;
     border-right: 5px solid #09aff6;
+    color: #0daff5;
   }
   &:hover {
     background-color: #def5ff;
     border-right: 5px solid #09aff6;
+    color: #0daff5;
   }
 `;
 
@@ -118,6 +138,7 @@ export const UserInfoContainer = styled.div`
 `;
 
 export const P = styled.p`
+  font-size: 15px;
   margin: 0;
   padding: 0;
 `;
@@ -152,11 +173,36 @@ export const HeaderButtonContainer = styled.div`
 `;
 
 export const BlueButton = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: #0fb1f6;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
   margin-left: 21px;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const WhiteButton = styled.button`
+  background-color: white;
+  border-radius: 10px;
+  border: none;
   margin-left: 21px;
+  position: relative;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+export const Badge = styled.span`
+  position: absolute;
+  top: 1;
+  padding: 3px;
+  border-radius: 50%;
+  background: #0eb1f6;
 `;
 
 export const H1 = styled.h1`
@@ -262,15 +308,15 @@ function App() {
                 Inbox
               </SidebarButton>
               <SidebarButton>
-                <InboxIcon style={marginButton} />
+                <SettingsInputAntennaIcon style={marginButton} />
                 Broadcast
               </SidebarButton>
               <SidebarButton>
-                <InboxIcon style={marginButton} />
+                <ListIcon style={marginButton} />
                 Lists
               </SidebarButton>
               <SidebarButton>
-                <InboxIcon style={marginButton} />
+                <LocalAtmIcon style={marginButton} />
                 Referrals
               </SidebarButton>
             </SidebarButtonContainer>
@@ -284,7 +330,9 @@ function App() {
                 </P>
                 <P>Company Name</P>
               </UserInfoContainer>
-              <KeyboardArrowDownOutlinedIcon />
+              <DropdownButton>
+                <KeyboardArrowDownOutlinedIcon />
+              </DropdownButton>
             </SidebarUserContainer>
           </Sidebar>
         </Aside>
@@ -292,15 +340,73 @@ function App() {
           <Header className="header">
             <SearchBar type="search" placeholder="Search" />
             <HeaderButtonContainer>
-              <BlueButton>+</BlueButton>
-              <BlueButton>Import</BlueButton>
-              <WhiteButton>B</WhiteButton>
+              <BlueButton style={{ paddingLeft: '10px', paddingRight: '10px' }}>
+                <AddCircleOutlineOutlinedIcon />
+              </BlueButton>
+              <BlueButton style={{ paddingLeft: '15px', paddingRight: '15px' }}>
+                <InsertDriveFileOutlinedIcon style={marginButton} />
+                Import Contacts
+              </BlueButton>
+              <WhiteButton
+                style={{ paddingLeft: '11px', paddingRight: '11px' }}
+              >
+                <NotificationsNoneIcon />
+                <Badge />
+              </WhiteButton>
             </HeaderButtonContainer>
           </Header>
           <H1>Dashboard</H1>
           <DashboardContainer>
             <MainLeftContainer>
-              <FullCard></FullCard>
+              <FullCard>
+                <Plot
+                  data={[
+                    {
+                      type: 'scatter',
+                      x: [
+                        '',
+                        'Jan',
+                        'Feb',
+                        'Mar',
+                        'Abr',
+                        'May',
+                        'Jun',
+                        'Jul',
+                        'Ago',
+                        'Sep',
+                        'Oct',
+                        'Nov',
+                        'Dic',
+                      ],
+                      y: [0, 199, 150, 280, 230, 220, 270, 150, 170, 280, 220, 110, 150],
+                      marker: {color: '#1dd250'},
+                      name: 'Customers'
+                    },
+                    {
+                      type: 'scatter',
+                      x: [
+                        '',
+                        'Jan',
+                        'Feb',
+                        'Mar',
+                        'Abr',
+                        'May',
+                        'Jun',
+                        'Jul',
+                        'Ago',
+                        'Sep',
+                        'Oct',
+                        'Nov',
+                        'Dic',
+                      ],
+                      y: [0, 120, 220, 150, 140, 290, 185, 205, 105, 120, 300, 80, 210],
+                      marker: {color: '#ff8900'},
+                      name: 'Prospects'
+                    },
+                  ]}
+                  layout={{ width: 920, height: 390, opacity: 0.7, title: 'Customer report'}}
+                />
+              </FullCard>
               <HalfCardContainer>
                 <HalfCard></HalfCard>
                 <HalfCard></HalfCard>
