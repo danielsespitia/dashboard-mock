@@ -17,6 +17,12 @@ import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 
 import mainLogo from './assets/logo.png';
 
+import contacts from './assets/contacts/contacts.png';
+import prospects from './assets/contacts/prospects.png';
+import customers from './assets/contacts/customers.png';
+import teamMembers from './assets/contacts/team-members.png';
+import inactive from './assets/contacts/inactive.png';
+
 export const DropdownButton = styled.button`
   display: inherit;
   justify-content: center;
@@ -188,6 +194,7 @@ export const BlueButton = styled.button`
   border-radius: 10px;
   color: white;
   margin-left: 21px;
+  box-shadow: 0px 10px 34px 0px rgba(15, 177, 246, 0.31);
   &:hover {
     opacity: 0.7;
   }
@@ -433,18 +440,50 @@ export const HalfCardStretched = styled.div`
 export const ContactsStatsContainer = styled.div`
   display: inherit;
   flex-direction: column;
+  margin-top: 17px;
 `;
 
 export const ContactsStatContainer = styled.div`
   display: inherit;
+  margin-bottom: 25px;
 `;
 
-export const ContactIcon = styled.img``;
+export const ContactIconContainer = styled.div`
+  height: 45px;
+  width: 45px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 14px 3px rgba(15, 177, 246, 0.4);
+`;
+
+export const ContactIcon = styled.img`
+  height: 100%;
+`;
+
+export const ProspectIconContainer = styled(ContactIconContainer)`
+  box-shadow: 0px 10px 25px 3px rgba(255, 138, 0, 0.4);
+`;
+
+export const CustomerIconContainer = styled(ContactIconContainer)`
+  box-shadow: 0px 10px 25px 3px rgba(29, 210, 80, 0.4);
+`;
+
+export const MembersIconContainer = styled(ContactIconContainer)`
+  box-shadow: 0px 10px 25px 3px rgba(123, 97, 255, 0.4);
+`;
+
+export const InactiveIconContainer = styled(ContactIconContainer)`
+  box-shadow: 0px 10px 25px 3px rgba(138, 140, 143, 0.4);
+`;
 
 export const ContactsTextContainer = styled.div`
   display: inherit;
+  margin-left: 28px;
   align-items: flex-start;
   flex-direction: column;
+`;
+
+export const ContactsSingleIcon = styled.img`
+  border-radius: 10px;
 `;
 
 export const marginButton = { marginLeft: '30px', marginRight: '6px' };
@@ -611,7 +650,12 @@ function App() {
                       width: 900,
                       height: 380,
                       opacity: 0.7,
-                      title: 'Customer report',
+                      title: {
+                        text: '<b>Customer report</b>',
+                        font: { family: 'Poppins', size: 15 },
+                        x: '0.02',
+                        y: '1.1',
+                      },
                     }}
                   />
                 </FullCard>
@@ -742,38 +786,51 @@ function App() {
                     </P>
                     <ContactsStatsContainer>
                       <ContactsStatContainer>
-                        <ContactIcon></ContactIcon>
+                        <ContactIconContainer>
+                          <ContactsSingleIcon src={contacts} alt="contacts" />
+                        </ContactIconContainer>
                         <ContactsTextContainer>
                           <P>425</P>
                           <P>Contacts</P>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
-                        <ContactIcon></ContactIcon>
+                        <ProspectIconContainer>
+                          <ContactsSingleIcon src={prospects} alt="contacts" />
+                        </ProspectIconContainer>
                         <ContactsTextContainer>
-                          <P>425</P>
-                          <P>Contacts</P>
+                          <P>100</P>
+                          <P>Prospects</P>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
-                        <ContactIcon></ContactIcon>
+                        <CustomerIconContainer>
+                          <ContactsSingleIcon src={customers} alt="contacts" />
+                        </CustomerIconContainer>
                         <ContactsTextContainer>
-                          <P>425</P>
-                          <P>Contacts</P>
+                          <P>250</P>
+                          <P>Customers</P>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
-                        <ContactIcon></ContactIcon>
+                        <MembersIconContainer>
+                          <ContactsSingleIcon
+                            src={teamMembers}
+                            alt="contacts"
+                          />
+                        </MembersIconContainer>
                         <ContactsTextContainer>
-                          <P>425</P>
-                          <P>Contacts</P>
+                          <P>50</P>
+                          <P>Team Members</P>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
-                        <ContactIcon></ContactIcon>
+                        <InactiveIconContainer>
+                          <ContactsSingleIcon src={inactive} alt="contacts" />
+                        </InactiveIconContainer>
                         <ContactsTextContainer>
-                          <P>425</P>
-                          <P>Contacts</P>
+                          <P>25</P>
+                          <P>Inactive</P>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                     </ContactsStatsContainer>
