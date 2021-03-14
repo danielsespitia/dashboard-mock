@@ -3,12 +3,12 @@ import { Link, BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import Plot from 'react-plotly.js';
 
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import InboxIcon from '@material-ui/icons/Inbox';
-import SettingsInputAntennaIcon from '@material-ui/icons/SettingsInputAntenna';
-import ListIcon from '@material-ui/icons/List';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import { BsGrid } from 'react-icons/bs';
+import { RiContactsBook2Line } from 'react-icons/ri';
+import { FiInbox } from 'react-icons/fi';
+import { IoMegaphoneOutline } from 'react-icons/io5';
+import { AiOutlineUnorderedList } from 'react-icons/ai';
+import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -488,6 +488,8 @@ export const ContactsSingleIcon = styled.img`
 
 export const marginButton = { marginLeft: '30px', marginRight: '6px' };
 
+export const sidebarIconStyle = { marginLeft: '32px', marginRight: '10px' };
+
 export const thumbnail =
   'https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg';
 
@@ -505,27 +507,27 @@ function App() {
               </SidebarHeader>
               <SidebarAnchorContainer>
                 <SidebarNavAnchor exact to="/" className="sidebar-button">
-                  <DashboardIcon style={marginButton} />
+                  <BsGrid size={19} style={sidebarIconStyle} />
                   Dashboard
                 </SidebarNavAnchor>
                 <SidebarNavAnchor>
-                  <ContactsIcon style={marginButton} />
+                  <RiContactsBook2Line size={19} style={sidebarIconStyle} />
                   Contacts
                 </SidebarNavAnchor>
                 <SidebarNavAnchor>
-                  <InboxIcon style={marginButton} />
+                  <FiInbox size={19} style={sidebarIconStyle} />
                   Inbox
                 </SidebarNavAnchor>
                 <SidebarNavAnchor>
-                  <SettingsInputAntennaIcon style={marginButton} />
+                  <IoMegaphoneOutline size={19} style={sidebarIconStyle} />
                   Broadcast
                 </SidebarNavAnchor>
                 <SidebarNavAnchor>
-                  <ListIcon style={marginButton} />
+                  <AiOutlineUnorderedList size={19} style={sidebarIconStyle} />
                   Lists
                 </SidebarNavAnchor>
                 <SidebarNavAnchor>
-                  <LocalAtmIcon style={marginButton} />
+                  <RiMoneyDollarBoxLine size={19} style={sidebarIconStyle} />
                   Referrals
                 </SidebarNavAnchor>
               </SidebarAnchorContainer>
