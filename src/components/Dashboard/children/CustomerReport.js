@@ -4,6 +4,8 @@ import {
   plotLayoutStyles,
 } from '../../../styles/components/DashboardStyles/CustomerReportStyles';
 
+console.log(plotLayoutStyles)
+
 const reportData = {
   months: [
     '',

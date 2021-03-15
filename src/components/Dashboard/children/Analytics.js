@@ -1,4 +1,3 @@
-import auth from '../../../auth';
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 
 import {
@@ -31,16 +30,14 @@ import {
   DropdownButton,
 } from '../../../styles/GlobalStyles';
 
-function Analytics() {
-  const {
-    messagesSent,
-    messagesLeft,
-    replyRates,
-    emailsSent,
-    openRate,
-    clickedRate,
-  } = auth.userStats;
-
+function Analytics({
+  messagesSent,
+  messagesLeft,
+  replyRates,
+  emailsSent,
+  openRate,
+  clickedRate,
+}) {
   return (
     <AnalyticsContainer>
       <HalfCard>

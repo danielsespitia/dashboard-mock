@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import searchIcon from '../../assets/search-icon.webp';
 
 export const HeaderContainer = styled.header`
   display: inherit;
@@ -22,7 +23,7 @@ export const SearchContainer = styled.div`
 
 export const SearchBar = styled.input`
   height: 100%;
-  background: url('https://cdn.iconscout.com/icon/free/png-256/search-1768073-1502246.png');
+  background: url(${searchIcon});
   background-repeat: no-repeat;
   background-size: 23px 23px;
   background-position: 8px 10px;
@@ -86,8 +87,11 @@ export const Badge = styled.span`
 
 export const blueButtonStyles = { paddingLeft: '10px', paddingRight: '10px' };
 
-export const blueButtonStylesAlt = { paddingLeft: '15px', paddingRight: '15px' }
+export const blueButtonStylesAlt = {
+  paddingLeft: '15px',
+  paddingRight: '15px',
+};
 
 export const whiteButtonStyles = { paddingLeft: '11px', paddingRight: '11px' };
 
-export const fileAddIconStyles = { marginRight: '6px' }
+export const fileAddIconStyles = { marginRight: '6px' };
