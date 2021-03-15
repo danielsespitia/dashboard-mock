@@ -4,7 +4,7 @@ Developed with JavaScript in React.js to reproduce a section from a reference We
 
 ![DanielEspitia-dashboard-mock-technical-test](https://user-images.githubusercontent.com/63252057/111125995-36e04280-8540-11eb-8224-9314d5d5ee56.png)
 
-The data in the Dashboard can be manipulated to reflect different values in the line chart, progress bars, referral values, referral link (this one can be copied to the clipboard with the icon button), and the contacts card information.
+The data in the Dashboard can be manipulated to render different values in the line chart, progress bars, referral values, referral link (this one can be copied to the clipboard with the icon button), and the contacts card information.
 
 The sidebar also has a navigation feature to navigate through different sections while keeping the current section focused in the sidebar.
 
