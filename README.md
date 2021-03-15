@@ -27,4 +27,4 @@ The sidebar also has a navigation feature to navigate through different sections
 ## Getting Started 
 To run this project it is necessary to have Node.js installed on your machine.
 
-To run the app, you have to install its dependencies first by running one of the following commands: `yarn install` or `npm install`. Once the dependencies installation is done, you will be able to run the app with the commands `yarn start` or `npm start` through your Expo Developer Tools and display it on your device emulator, smartphone or web browser.
+To run the app, you have to install its dependencies first by running one of the following commands: `yarn install` or `npm install`. Once the dependencies installation is done, you will be able to run the app with the commands `yarn start` or `npm start` in your web browser.
