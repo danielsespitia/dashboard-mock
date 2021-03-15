@@ -15,7 +15,7 @@ The sidebar also has a navigation feature to navigate through different sections
 - Dependencies such as React-Plotly for the line chart, react-icons, react-copy-to-clipboard.
 
 ## Live Demo
-[Dashboard Mock in Vercel](https://dashboard-mock.vercel.app/)
+[Dashboard Mock Deployed in Vercel](https://dashboard-mock.vercel.app/)
 
 ## Authors
 
