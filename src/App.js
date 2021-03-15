@@ -26,9 +26,10 @@ import inactive from './assets/contacts/inactive.png';
 export const DropdownButton = styled.button`
   display: inherit;
   justify-content: center;
+  align-self: flex-start;
   background: none;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   border: none;
   cursor: pointer;
 `;
@@ -47,7 +48,7 @@ export const Aside = styled.aside`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 16.9%;
+  width: 17.3%;
 `;
 
 export const Sidebar = styled.div`
@@ -56,8 +57,8 @@ export const Sidebar = styled.div`
   display: inherit;
   flex-direction: column;
   background-color: white;
-  height: 95%;
-  width: 230px;
+  height: 94.4%;
+  width: 229px;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
@@ -82,7 +83,7 @@ export const SidebarNavAnchor = styled(Link)`
   align-items: center;
   height: 43px;
   width: 98%;
-  font-size: 1rem;
+  font-size: 1.04em;
   border: none;
   border-right: 5px solid white;
   margin-bottom: 15px;
@@ -91,7 +92,7 @@ export const SidebarNavAnchor = styled(Link)`
     background-color: #def5ff;
     border-right: 5px solid #09aff6;
     color: #0daff5;
-    font-weight: bold;
+    font-weight: 600;
   }
   &:hover {
     background-color: #def5ff;
@@ -145,15 +146,39 @@ export const Thumbnail = styled.img`
 export const UserInfoContainer = styled.div`
   display: inherit;
   margin-left: 10px;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
 `;
 
-export const P = styled.p`
-  font-weight: 300;
-  font-size: 14px;
+export const H1 = styled.h1`
   margin: 0;
   padding: 0;
+`;
+
+export const H2 = styled.h2`
+  margin: 0;
+  padding: 0;
+`;
+
+export const H3 = styled.h2`
+  margin: 0;
+  padding: 0;
+`;
+
+export const P = styled.p`
+  margin: 0;
+  padding: 0;
+`;
+
+export const UserNameText = styled(P)`
+  font-weight: 500;
+  margin-bottom: -6px;
+  font-size: 1em;
+`;
+
+export const CompanyName = styled(P)`
+  font-size: 0.9em;
 `;
 
 export const Main = styled.main`
@@ -189,7 +214,8 @@ export const BlueButton = styled.button`
   display: flex;
   align-items: center;
   background-color: #0fb1f6;
-  font-size: 1rem;
+  font-size: 0.9em;
+  font-weight: 500;
   border: none;
   border-radius: 10px;
   color: white;
@@ -219,18 +245,17 @@ export const Badge = styled.span`
   background: #0eb1f6;
 `;
 
-export const H1 = styled.h1`
+export const MainTitle = styled(H1)`
   padding: 0;
   margin: 0;
-  margin-top: 19px;
-  margin-bottom: 22px;
-  font-size: 34px;
-  font-weight: 900;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  font-size: 2.1em;
+  font-weight: 600;
 `;
 
 export const DashboardContainer = styled.div`
   display: inherit;
-  margin-top: 4px;
   flex-direction: row;
   width: 100%;
   height: 100%;
@@ -254,7 +279,7 @@ export const MainRightContainer = styled.div`
 export const FullCard = styled.div`
   display: inherit;
   justify-content: center;
-  border-radius: 7px;
+  border-radius: 9px;
   background-color: white;
   height: 50.8%;
   width: 100%;
@@ -272,7 +297,7 @@ export const HalfCardContainer = styled.div`
 export const HalfCard = styled.div`
   display: inherit;
   flex-direction: column;
-  border-radius: 7px;
+  border-radius: 9px;
   height: 100%;
   width: 48.9%;
   background-color: white;
@@ -295,8 +320,36 @@ export const CardInfoContainerAlt = styled(CardInfoContainer)`
 export const CardTitleContainer = styled.div`
   display: inherit;
   width: 100%;
+  margin-top: 2px;
   align-items: center;
   justify-content: space-between;
+`;
+
+export const HalfCardTitle = styled(H2)`
+  font-size: 1.02em;
+  font-weight: 550;
+`;
+
+export const StatsText = styled(P)`
+  font-weight: 300;
+  font-size: 0.85em;
+`;
+
+export const TimeWindowText = styled(StatsText)`
+  margin-right: 7px;
+`;
+
+export const StatsTextBlue = styled(StatsText)`
+  color: #0fb1f6;
+  font-weight: 600;
+`;
+
+export const StatsTextOrange = styled(StatsTextBlue)`
+  color: #ffb800;
+`;
+
+export const StatsTextGreen = styled(StatsTextBlue)`
+  color: #1dd250;
 `;
 
 export const DropdownContainer = styled.div`
@@ -375,7 +428,7 @@ export const HalfCardAltered = styled.div`
   background-color: white;
   height: 43.8%;
   width: 95.9%;
-  border-radius: 7px;
+  border-radius: 9px;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
@@ -390,22 +443,33 @@ export const ReferralStatContainer = styled.div`
   display: inherit;
   align-items: flex-start;
   flex-direction: column;
-  margin-top: 6px;
+  margin-top: 12px;
   width: 100%;
   padding-bottom: 16px;
   border-bottom: 2px solid #efefef;
 `;
 
-export const ReferralStatValueBlue = styled.p`
-  padding: 0;
-  margin: 0;
-  font-size: 25px;
+export const ReferralStatsText = styled(P)`
+  font-size: 0.94em;
+  font-weight: 300;
+`;
+
+export const ReferralStatValueBlue = styled(P)`
+  font-family: 'Montserrat';
+  font-size: 1.6em;
   color: #0fb1f6;
   font-weight: 600;
+  margin-bottom: -4px;
 `;
 
 export const ReferralStatValueGreen = styled(ReferralStatValueBlue)`
   color: #1dd250;
+`;
+
+export const ReferralText = styled(P)`
+  margin-top: 5px;
+  font-size: 0.91em;
+  font-weight: 500;
 `;
 
 export const ReferralLinkContainer = styled.div`
@@ -415,7 +479,7 @@ export const ReferralLinkContainer = styled.div`
   flex-direction: column;
   margin-top: 14px;
   width: 100%;
-  height: 85px;
+  height: 93px;
 `;
 
 export const ReferralLink = styled.input`
@@ -423,7 +487,7 @@ export const ReferralLink = styled.input`
   width: 100%;
   background-color: #f3f1f1;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
 `;
 
@@ -433,7 +497,7 @@ export const HalfCardStretched = styled.div`
   margin-top: 20px;
   height: 53.3%;
   width: 95.9%;
-  border-radius: 7px;
+  border-radius: 9px;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
@@ -486,6 +550,16 @@ export const ContactsSingleIcon = styled.img`
   border-radius: 10px;
 `;
 
+export const ContactsValue = styled(ReferralStatValueBlue)`
+  font-size: 1.3em;
+  color: black;
+`;
+
+export const ContactsText = styled(P)`
+  font-size: 0.94em;
+  font-weight: 300;
+`;
+
 export const marginButton = { marginLeft: '30px', marginRight: '6px' };
 
 export const sidebarIconStyle = { marginLeft: '32px', marginRight: '10px' };
@@ -536,10 +610,8 @@ function App() {
                   <Thumbnail src={thumbnail} />
                 </ThumbnailContainer>
                 <UserInfoContainer>
-                  <P>
-                    <strong>Jacob Jones</strong>
-                  </P>
-                  <P>Company Name</P>
+                  <UserNameText>Jacob Jones</UserNameText>
+                  <CompanyName>Company Name</CompanyName>
                 </UserInfoContainer>
                 <DropdownButton>
                   <KeyboardArrowDownOutlinedIcon />
@@ -570,7 +642,7 @@ function App() {
                 </WhiteButton>
               </HeaderButtonContainer>
             </Header>
-            <H1>Dashboard</H1>
+            <MainTitle>Dashboard</MainTitle>
             <DashboardContainer>
               <MainLeftContainer>
                 <FullCard>
@@ -665,11 +737,9 @@ function App() {
                   <HalfCard>
                     <CardInfoContainer>
                       <CardTitleContainer>
-                        <P>
-                          <strong>SMS Broadcast Analytics</strong>
-                        </P>
+                        <HalfCardTitle>SMS Broadcast Analytics</HalfCardTitle>
                         <DropdownContainer>
-                          <P>Last week</P>
+                          <TimeWindowText>Last week</TimeWindowText>
                           <DropdownButton>
                             <KeyboardArrowDownOutlinedIcon />
                           </DropdownButton>
@@ -678,8 +748,8 @@ function App() {
                       <StatsContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Total Messages Sent</P>
-                            <P>{messagesSent}</P>
+                            <StatsText>Total Messages Sent</StatsText>
+                            <StatsTextBlue>{messagesSent}</StatsTextBlue>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarLeftBlue />
@@ -687,8 +757,8 @@ function App() {
                         </StatContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Number of messages you left</P>
-                            <P>{messagesLeft}</P>
+                            <StatsText>Number of messages you left</StatsText>
+                            <StatsTextOrange>{messagesLeft}</StatsTextOrange>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarLeftOrange />
@@ -696,8 +766,8 @@ function App() {
                         </StatContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Reply rates</P>
-                            <P>{replyRates}</P>
+                            <StatsText>Reply rates</StatsText>
+                            <StatsTextGreen>{replyRates}</StatsTextGreen>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarLeftGreen />
@@ -709,11 +779,9 @@ function App() {
                   <HalfCard>
                     <CardInfoContainer>
                       <CardTitleContainer>
-                        <P>
-                          <strong>Email Broadcast Analytics</strong>
-                        </P>
+                        <HalfCardTitle>Email Broadcast Analytics</HalfCardTitle>
                         <DropdownContainer>
-                          <P>Last week</P>
+                          <TimeWindowText>Last week</TimeWindowText>
                           <DropdownButton>
                             <KeyboardArrowDownOutlinedIcon />
                           </DropdownButton>
@@ -722,8 +790,8 @@ function App() {
                       <StatsContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Total Emails Sent</P>
-                            <P>{emailsSent}</P>
+                            <StatsText>Total Emails Sent</StatsText>
+                            <StatsTextBlue>{emailsSent}</StatsTextBlue>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarRightBlue />
@@ -731,8 +799,8 @@ function App() {
                         </StatContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Open Rate</P>
-                            <P>{openRate}</P>
+                            <StatsText>Open Rate</StatsText>
+                            <StatsTextOrange>{openRate}</StatsTextOrange>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarRightOrange />
@@ -740,8 +808,8 @@ function App() {
                         </StatContainer>
                         <StatContainer>
                           <StatTextContainer>
-                            <P>Clicked Rate</P>
-                            <P>{clickedRate}</P>
+                            <StatsText>Clicked Rate</StatsText>
+                            <StatsTextGreen>{clickedRate}</StatsTextGreen>
                           </StatTextContainer>
                           <ProgressBarOutline>
                             <ProgressBarRightGreen />
@@ -755,27 +823,24 @@ function App() {
               <MainRightContainer>
                 <HalfCardAltered>
                   <CardInfoContainerAlt>
-                    <P>
-                      <strong>Referrals</strong>
-                    </P>
+                    <HalfCardTitle>Referrals</HalfCardTitle>
                     <ReferralStatsContainer>
                       <ReferralStatContainer>
                         <ReferralStatValueBlue>236</ReferralStatValueBlue>
-                        <P>Active customers</P>
+                        <ReferralStatsText>Active customers</ReferralStatsText>
                       </ReferralStatContainer>
                       <ReferralStatContainer>
                         <ReferralStatValueGreen>$5608</ReferralStatValueGreen>
-                        <P>Upcoming Payout $</P>
+                        <ReferralStatsText>Upcoming Payout $</ReferralStatsText>
                       </ReferralStatContainer>
                       <ReferralLinkContainer>
-                        <P>
-                          <strong>
-                            Share this referral link to your friends & followers
-                          </strong>
-                        </P>
+                        <ReferralText>
+                          Share this referral link to your friends & followers
+                        </ReferralText>
                         <ReferralLink
                           type="input"
-                          placeholder="https://app.teametrix.com?fpr=james52"
+                          value="https://app.teametrix.com?fpr=james52"
+                          readonly
                         />
                       </ReferralLinkContainer>
                     </ReferralStatsContainer>
@@ -783,17 +848,15 @@ function App() {
                 </HalfCardAltered>
                 <HalfCardStretched>
                   <CardInfoContainer>
-                    <P>
-                      <strong>Contacts</strong>
-                    </P>
+                    <HalfCardTitle>Contacts</HalfCardTitle>
                     <ContactsStatsContainer>
                       <ContactsStatContainer>
                         <ContactIconContainer>
                           <ContactsSingleIcon src={contacts} alt="contacts" />
                         </ContactIconContainer>
                         <ContactsTextContainer>
-                          <P>425</P>
-                          <P>Contacts</P>
+                          <ContactsValue>425</ContactsValue>
+                          <ContactsText>Contacts</ContactsText>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
@@ -801,8 +864,8 @@ function App() {
                           <ContactsSingleIcon src={prospects} alt="contacts" />
                         </ProspectIconContainer>
                         <ContactsTextContainer>
-                          <P>100</P>
-                          <P>Prospects</P>
+                          <ContactsValue>100</ContactsValue>
+                          <ContactsText>Prospects</ContactsText>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
@@ -810,8 +873,8 @@ function App() {
                           <ContactsSingleIcon src={customers} alt="contacts" />
                         </CustomerIconContainer>
                         <ContactsTextContainer>
-                          <P>250</P>
-                          <P>Customers</P>
+                          <ContactsValue>250</ContactsValue>
+                          <ContactsText>Customers</ContactsText>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
@@ -822,8 +885,8 @@ function App() {
                           />
                         </MembersIconContainer>
                         <ContactsTextContainer>
-                          <P>50</P>
-                          <P>Team Members</P>
+                          <ContactsValue>50</ContactsValue>
+                          <ContactsText>Team Members</ContactsText>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                       <ContactsStatContainer>
@@ -831,8 +894,8 @@ function App() {
                           <ContactsSingleIcon src={inactive} alt="contacts" />
                         </InactiveIconContainer>
                         <ContactsTextContainer>
-                          <P>25</P>
-                          <P>Inactive</P>
+                          <ContactsValue>25</ContactsValue>
+                          <ContactsText>Inactive</ContactsText>
                         </ContactsTextContainer>
                       </ContactsStatContainer>
                     </ContactsStatsContainer>
