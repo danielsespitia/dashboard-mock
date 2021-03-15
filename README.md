@@ -25,4 +25,4 @@ The sidebar also has a navigation feature to navigate through different sections
 -   LinkedIn: [danielsespitia](https://linkedin.com/in/danielsespitia)
 
 ## Getting Started 
-To run this project you need to have Node.js installed on your machine, you can run the commands `yarn install` or `npm install`, once the dependency installation is done, you can run the app in your browser locally.
+To run this project it is necessary to have Node.js installed on your machine. You can run the commands `yarn install` or `npm install`, once the dependency installation is done, to successfully run the app in your browser locally using `yarn start` or `npm start`.
