@@ -13,7 +13,7 @@ The sidebar also has a navigation feature to navigate through different sections
 - React.js.
 - Styled with CSS in JS (Styled Components).
 - Dependencies such as React-Plotly for the line chart, react-icons, react-copy-to-clipboard.
-- 
+
 ## Live Demo
 [Dashboard Mock in Vercel](https://dashboard-mock.vercel.app/)
 
