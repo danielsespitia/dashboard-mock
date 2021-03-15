@@ -4,6 +4,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import Plot from 'react-plotly.js';
 
+import { IoChevronBackSharp } from 'react-icons/io5';
+
 import { BsGrid } from 'react-icons/bs';
 import { RiContactsBook2Line } from 'react-icons/ri';
 import { FiInbox } from 'react-icons/fi';
@@ -14,7 +16,7 @@ import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import { AiOutlineFileAdd } from 'react-icons/ai';
-import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import { BsBell } from 'react-icons/bs';
 
 import { FaRegCopy } from 'react-icons/fa';
 
@@ -54,6 +56,23 @@ export const Aside = styled.aside`
   width: 17.3%;
 `;
 
+export const BackButton = styled.button`
+  position: relative;
+  bottom: 92.5%;
+  left: 214px;
+  z-index: 5;
+  background-color: white;
+  display: inherit;
+  align-items: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  color: #0fb1f6;
+  border: none;
+  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+`;
+
 export const Sidebar = styled.div`
   margin-top: 12px;
   border-radius: 8px;
@@ -61,7 +80,9 @@ export const Sidebar = styled.div`
   flex-direction: column;
   background-color: white;
   height: 94.4%;
-  width: 229px;
+  width: 230px;
+  position: absolute;
+  z-index: 0;
   box-shadow: 0px 0px 2px 3px rgba(0, 0, 0, 0.02);
 `;
 
@@ -189,7 +210,7 @@ export const Main = styled.main`
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
-  width: 83%;
+  width: 82.7%;
 `;
 
 export const Header = styled.header`
@@ -218,7 +239,7 @@ export const SearchBar = styled.input`
   background-repeat: no-repeat;
   background-size: 23px 23px;
   background-position: 8px 10px;
-  padding-left: 33px;
+  padding-left: 40px;
   font-size: 0.97em;
   border: none;
   border-radius: 8px;
@@ -238,7 +259,7 @@ export const BlueButton = styled.button`
   display: flex;
   align-items: center;
   background-color: #0fb1f6;
-  font-size: 0.9em;
+  font-size: 0.95em;
   font-weight: 500;
   border: none;
   border-radius: 10px;
@@ -251,20 +272,27 @@ export const BlueButton = styled.button`
 `;
 
 export const WhiteButton = styled.button`
+  display: flex;
+  align-items: center;
+  z-index: 0;
   background-color: white;
   border-radius: 10px;
   border: none;
-  margin-left: 21px;
   position: relative;
+  margin-left: 21px;
   &:hover {
     opacity: 0.7;
   }
 `;
 
 export const Badge = styled.span`
+  top: 12px;
+  right: 12px;
+  height: 1px;
+  width: 1px;
   position: absolute;
-  top: 1;
-  padding: 3px;
+  z-index: 2;
+  padding: 3.5px;
   border-radius: 50%;
   background: #0eb1f6;
 `;
@@ -313,7 +341,7 @@ export const FullCard = styled.div`
 export const HalfCardContainer = styled.div`
   display: inherit;
   justify-content: space-between;
-  margin-top: 22px;
+  margin-top: 20px;
   height: 46%;
   width: 100%;
 `;
@@ -376,6 +404,19 @@ export const StatsTextGreen = styled(StatsTextBlue)`
   color: #1dd250;
 `;
 
+export const StatsTextBlueAlt = styled(StatsText)`
+  color: #0fb1f6;
+  font-weight: 600;
+`;
+
+export const StatsTextOrangeAlt = styled(StatsTextBlueAlt)`
+  color: #ffb800;
+`;
+
+export const StatsTextGreenAlt = styled(StatsTextBlueAlt)`
+  color: #1dd250;
+`;
+
 export const DropdownContainer = styled.div`
   display: inherit;
   align-items: center;
@@ -394,9 +435,19 @@ export const StatContainer = styled.div`
   margin-bottom: 29px;
 `;
 
+export const StatContainerAlt = styled(StatContainer)`
+  margin-bottom: 6.8px;
+`;
+
 export const StatTextContainer = styled.div`
   display: inherit;
   justify-content: space-between;
+`;
+
+export const StatSecondContainer = styled.div`
+  display: inherit;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 const messagesSent = '100%';
@@ -483,7 +534,6 @@ export const ReferralStatValueBlue = styled(P)`
   font-size: 1.6em;
   color: #0fb1f6;
   font-weight: 600;
-  margin-bottom: -4px;
 `;
 
 export const ReferralStatValueGreen = styled(ReferralStatValueBlue)`
@@ -501,9 +551,9 @@ export const ReferralSectionContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 14px;
+  margin-top: 8px;
   width: 100%;
-  height: 93px;
+  height: 92px;
 `;
 
 export const ReferralLinkContainer = styled.div`
@@ -553,7 +603,7 @@ export const ContactsStatsContainer = styled.div`
 
 export const ContactsStatContainer = styled.div`
   display: inherit;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 `;
 
 export const ContactIconContainer = styled.div`
@@ -663,6 +713,9 @@ function App() {
                   <KeyboardArrowDownOutlinedIcon />
                 </DropdownButton>
               </SidebarUserContainer>
+              <BackButton>
+                <IoChevronBackSharp size={18} />
+              </BackButton>
             </Sidebar>
           </Aside>
           <Main>
@@ -685,7 +738,7 @@ function App() {
                 <WhiteButton
                   style={{ paddingLeft: '11px', paddingRight: '11px' }}
                 >
-                  <NotificationsNoneIcon />
+                  <BsBell size={20} />
                   <Badge />
                 </WhiteButton>
               </HeaderButtonContainer>
@@ -703,15 +756,15 @@ function App() {
                           'Jan',
                           'Feb',
                           'Mar',
-                          'Abr',
+                          'Apr',
                           'May',
                           'Jun',
                           'Jul',
-                          'Ago',
+                          'Aug',
                           'Sep',
                           'Oct',
                           'Nov',
-                          'Dic',
+                          'Dec',
                         ],
                         y: [
                           0,
@@ -738,15 +791,15 @@ function App() {
                           'Jan',
                           'Feb',
                           'Mar',
-                          'Abr',
+                          'Apr',
                           'May',
                           'Jun',
                           'Jul',
-                          'Ago',
+                          'Aug',
                           'Sep',
                           'Oct',
                           'Nov',
-                          'Dic',
+                          'Dec',
                         ],
                         y: [
                           0,
@@ -759,7 +812,7 @@ function App() {
                           205,
                           105,
                           120,
-                          402,
+                          300,
                           80,
                           210,
                         ],
@@ -778,6 +831,8 @@ function App() {
                         x: '0.02',
                         y: '1.1',
                       },
+                      useResizeHandler: true,
+                      style: { width: '100%', height: '100%' },
                     }}
                   />
                 </FullCard>
@@ -837,32 +892,36 @@ function App() {
                       </CardTitleContainer>
                       <StatsContainer>
                         <StatContainer>
-                          <StatTextContainer>
+                        <StatTextContainer>
                             <StatsText>Total Emails Sent</StatsText>
-                            <StatsTextBlue>{emailsSent}</StatsTextBlue>
+                            <StatsTextBlue>{messagesSent}</StatsTextBlue>
                           </StatTextContainer>
-                          <ProgressBarOutline>
-                            <ProgressBarRightBlue />
-                          </ProgressBarOutline>
+                            <ProgressBarOutline>
+                              <ProgressBarRightBlue />
+                            </ProgressBarOutline>                          
                         </StatContainer>
-                        <StatContainer>
+                        <StatContainerAlt>
                           <StatTextContainer>
                             <StatsText>Open Rate</StatsText>
-                            <StatsTextOrange>{openRate}</StatsTextOrange>
                           </StatTextContainer>
-                          <ProgressBarOutline>
-                            <ProgressBarRightOrange />
-                          </ProgressBarOutline>
-                        </StatContainer>
-                        <StatContainer>
+                          <StatSecondContainer>
+                            <ProgressBarOutline>
+                              <ProgressBarRightOrange />
+                            </ProgressBarOutline>
+                            <StatsTextOrange>{openRate}</StatsTextOrange>
+                          </StatSecondContainer>
+                        </StatContainerAlt>
+                        <StatContainerAlt>
                           <StatTextContainer>
                             <StatsText>Clicked Rate</StatsText>
-                            <StatsTextGreen>{clickedRate}</StatsTextGreen>
                           </StatTextContainer>
-                          <ProgressBarOutline>
-                            <ProgressBarRightGreen />
-                          </ProgressBarOutline>
-                        </StatContainer>
+                          <StatSecondContainer>
+                            <ProgressBarOutline>
+                              <ProgressBarRightGreen />
+                            </ProgressBarOutline>
+                            <StatsTextGreen>{clickedRate}</StatsTextGreen>
+                          </StatSecondContainer>
+                        </StatContainerAlt>
                       </StatsContainer>
                     </CardInfoContainer>
                   </HalfCard>
