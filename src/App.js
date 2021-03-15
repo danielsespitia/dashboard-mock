@@ -1,5 +1,6 @@
 import './App.css';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import styled from 'styled-components';
 import Plot from 'react-plotly.js';
 
@@ -12,8 +13,10 @@ import { RiMoneyDollarBoxLine } from 'react-icons/ri';
 
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import InsertDriveFileOutlinedIcon from '@material-ui/icons/InsertDriveFileOutlined';
+import { AiOutlineFileAdd } from 'react-icons/ai';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+
+import { FaRegCopy } from 'react-icons/fa';
 
 import mainLogo from './assets/logo.png';
 
@@ -197,13 +200,34 @@ export const Header = styled.header`
   width: 97.4%;
 `;
 
-export const SearchBar = styled.input`
+export const SearchContainer = styled.div`
+  display: inherit;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: #ffffff;
   height: 45px;
+  width: 29.3vw;
   border: none;
   border-radius: 8px;
-  width: 29.3vw;
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
+`;
+
+export const SearchBar = styled.input`
+  height: 100%;
+  background: url('https://cdn.iconscout.com/icon/free/png-256/search-1768073-1502246.png');
+  background-repeat: no-repeat;
+  background-size: 23px 23px;
+  background-position: 8px 10px;
+  padding-left: 33px;
+  font-size: 0.97em;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
   box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.02);
   outline: none;
+  &::placeholder {
+    color: #000000;
+  }
 `;
 
 export const HeaderButtonContainer = styled.div`
@@ -472,7 +496,7 @@ export const ReferralText = styled(P)`
   font-weight: 500;
 `;
 
-export const ReferralLinkContainer = styled.div`
+export const ReferralSectionContainer = styled.div`
   display: inherit;
   align-items: flex-start;
   justify-content: space-between;
@@ -482,9 +506,29 @@ export const ReferralLinkContainer = styled.div`
   height: 93px;
 `;
 
+export const ReferralLinkContainer = styled.div`
+  display: inherit;
+  width: 100%;
+  background-color: #f3f1f1;
+  border: none;
+  border-radius: 8px;
+`;
+
+export const CopyToClipboardButton = styled.button`
+  border: none;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 export const ReferralLink = styled.input`
   height: 42px;
-  width: 100%;
+  width: 87%;
+  padding-left: 14px;
+  font-size: 0.92em;
+  color: grey;
   background-color: #f3f1f1;
   border: none;
   border-radius: 8px;
@@ -567,6 +611,8 @@ export const sidebarIconStyle = { marginLeft: '32px', marginRight: '10px' };
 export const thumbnail =
   'https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg';
 
+export const referralUrl = 'https://app.teametrix.com?fpr=james52';
+
 function App() {
   return (
     <div style={{ backgroundColor: '#000' }}>
@@ -621,7 +667,9 @@ function App() {
           </Aside>
           <Main>
             <Header className="header">
-              <SearchBar type="search" placeholder="Search" />
+              <SearchContainer>
+                <SearchBar type="search" placeholder="Search" />
+              </SearchContainer>
               <HeaderButtonContainer>
                 <BlueButton
                   style={{ paddingLeft: '10px', paddingRight: '10px' }}
@@ -631,7 +679,7 @@ function App() {
                 <BlueButton
                   style={{ paddingLeft: '15px', paddingRight: '15px' }}
                 >
-                  <InsertDriveFileOutlinedIcon style={{ marginRight: '6px' }} />
+                  <AiOutlineFileAdd size={15} style={{ marginRight: '6px' }} />
                   Import Contacts
                 </BlueButton>
                 <WhiteButton
@@ -833,16 +881,23 @@ function App() {
                         <ReferralStatValueGreen>$5608</ReferralStatValueGreen>
                         <ReferralStatsText>Upcoming Payout $</ReferralStatsText>
                       </ReferralStatContainer>
-                      <ReferralLinkContainer>
+                      <ReferralSectionContainer>
                         <ReferralText>
                           Share this referral link to your friends & followers
                         </ReferralText>
-                        <ReferralLink
-                          type="input"
-                          value="https://app.teametrix.com?fpr=james52"
-                          readonly
-                        />
-                      </ReferralLinkContainer>
+                        <ReferralLinkContainer>
+                          <ReferralLink
+                            type="input"
+                            value={referralUrl}
+                            readonly
+                          />
+                          <CopyToClipboard text={referralUrl}>
+                            <CopyToClipboardButton>
+                              <FaRegCopy size={15} />
+                            </CopyToClipboardButton>
+                          </CopyToClipboard>
+                        </ReferralLinkContainer>
+                      </ReferralSectionContainer>
                     </ReferralStatsContainer>
                   </CardInfoContainerAlt>
                 </HalfCardAltered>
