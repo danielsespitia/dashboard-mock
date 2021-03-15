@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Dashboard Mock - Technical Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developed with JavaScript in React.js reproducing a section from a reference Web App screenshot.
 
-## Available Scripts
+![DanielEspitia-dashboard-mock-technical-test](https://user-images.githubusercontent.com/63252057/111125995-36e04280-8540-11eb-8224-9314d5d5ee56.png)
 
-In the project directory, you can run:
+The data in the Dashboard can be manipulated to reflect different values in the line chart, progress bars, referral values, referral link (this one can be copied to the clipboard with the icon button), and contacts card information.
 
-### `yarn start`
+The sidebar also has a navigation feature to navigate through different sections while keeping the current section focused in the sidebar.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
+- Javascript.
+- React.js.
+- Styled with CSS in JS (Styled Components).
+- Dependencies such as React-Plotly for the line chart, react-icons, react-copy-to-clipboard.
+- 
+## Live Demo
+[Dashboard Mock in Vercel](https://dashboard-mock.vercel.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Authors
 
-### `yarn test`
+👤 **Daniel S. Espitia**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   GitHub: [@danielsespitia](https://github.com/danielsespitia)
+-   LinkedIn: [danielsespitia](https://linkedin.com/in/danielsespitia)
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Getting Started 
+To run this project you need to have Node.js installed on your machine, you can run the commands `yarn install` or `npm install`, once the dependency installation is done, you can run the app in your browser locally.
