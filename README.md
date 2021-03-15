@@ -1,6 +1,6 @@
 # Dashboard Mock - Technical Test
 
-Developed with JavaScript in React.js reproducing a section from a reference Web App screenshot.
+Developed with JavaScript in React.js to reproduce a section from a reference Web App screenshot.
 
 ![DanielEspitia-dashboard-mock-technical-test](https://user-images.githubusercontent.com/63252057/111125995-36e04280-8540-11eb-8224-9314d5d5ee56.png)
 
