@@ -20,6 +20,15 @@ export const P = styled.p`
   padding: 0;
 `;
 
+export const PageContainer = styled.div`
+  display: flex;
+  margin: auto;
+  background-color: #f3f2f4;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+`;
+
 export const DropdownButton = styled.button`
   display: inherit;
   justify-content: center;
@@ -29,15 +38,6 @@ export const DropdownButton = styled.button`
   width: 20px;
   border: none;
   cursor: pointer;
-`;
-
-export const PageContainer = styled.div`
-  display: flex;
-  margin: auto;
-  background-color: #f3f2f4;
-  height: 100vh;
-  width: 100vw;
-  flex-direction: row;
 `;
 
 export const Aside = styled.aside`
