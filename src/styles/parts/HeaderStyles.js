@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import searchIcon from '../../assets/search-icon.webp';
 
 export const HeaderContainer = styled.header`
